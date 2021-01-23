@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent{
 
-
+  test = 'angular-eight-queens';
 
 }
