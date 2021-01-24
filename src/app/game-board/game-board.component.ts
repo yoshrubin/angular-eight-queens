@@ -25,9 +25,6 @@ export class GameBoardComponent implements OnInit {
   toggleQueen(row: any, column: any) {
     for (var x in this.queens) {
       for (var y in this.queens[x]) {
-        console.log(this.queens[x][y],'value');
-        console.log(x,'x',row);
-        console.log(y,'y',column);
         if (this.queens[x][y] && x == row) {
           console.log('cannot place queen in this row');
           return;
