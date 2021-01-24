@@ -1,1 +1,20 @@
-<div id="board"></div>
+<div id="board">
+  <div class="row" *ngFor="let row of rows; let i = index">
+    <ng-template [ngIf]="i % 2 === 0" [ngIfElse]="odd">
+      <div
+        class="square"
+        [ngClass]="j % 2 === 0 ? 'white' : 'black'"
+        *ngFor="let square of squares; let j = index"
+        (click)="toggleQueen(i, j)"
+      ></div>
+    </ng-template>
+    <ng-template #odd>
+      <div
+        class="square"
+        [ngClass]="j % 2 === 0 ? 'black' : 'white'"
+        *ngFor="let square of squares; let j = index"
+        (click)="toggleQueen(i, j)"
+      ></div>
+    </ng-template>
+  </div>
+</div>
