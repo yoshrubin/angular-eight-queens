@@ -1,3 +1,22 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.winner {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight:900;
+  font-size: 100px;
+}
+
+.score {
+  font-weight:500;
+  font-size: 40px;
+}
+
 #board {
   width: 800px;
   height: 800px;
@@ -14,6 +33,9 @@
 .square {
   width: 100px;
   height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .white {
@@ -22,4 +44,10 @@
 
 .black {
   background-color: black;
+}
+
+.queen {
+  width: 80px;
+  height: 80px;
+  text-shadow: 1px 1px 8px #ffffff;
 }

@@ -1,24 +1,34 @@
-<div id="board">
-  <div class="row" *ngFor="let row of rows; let i = index">
-    <ng-template [ngIf]="i % 2 === 0" [ngIfElse]="odd">
-      <div
-        class="square"
-        [ngClass]="j % 2 === 0 ? 'white' : 'black'"
-        *ngFor="let square of squares; let j = index"
-        (click)="toggleQueen(i, j)"
-      >
-        <img src="/src/assets/BlackQueen.svg" *ngIf="queens[i][j]" class="queen"/>
-      </div>
+<div class="game">
+  <div class="score">
+    <div *ngIf="queenCount === 8; else count" class="winner">
+      YOU WIN!
+    </div>
+    <ng-template #count>
+      Queens Placed : {{queenCount}}
     </ng-template>
-    <ng-template #odd>
-      <div
-        class="square"
-        [ngClass]="j % 2 === 0 ? 'black' : 'white'"
-        *ngFor="let square of squares; let j = index"
-        (click)="toggleQueen(i, j)"
-      >
-        <img src="/src/assets/BlackQueen.svg" *ngIf="queens[i][j]" class="queen" />
-      </div>
-    </ng-template>
+  </div>
+  <div id="board">
+    <div class="row" *ngFor="let row of rows; let i = index">
+      <ng-template [ngIf]="i % 2 === 0" [ngIfElse]="odd">
+        <div
+          class="square"
+          [ngClass]="j % 2 === 0 ? 'white' : 'black'"
+          *ngFor="let square of squares; let j = index"
+          (click)="toggleQueen(i, j)"
+        >
+          <img src="/src/assets/BlackQueen.svg" alt="Queen" *ngIf="queens[i][j]" class="queen"/>
+        </div>
+      </ng-template>
+      <ng-template #odd>
+        <div
+          class="square"
+          [ngClass]="j % 2 === 0 ? 'black' : 'white'"
+          *ngFor="let square of squares; let j = index"
+          (click)="toggleQueen(i, j)"
+        >
+          <img src="/src/assets/BlackQueen.svg" alt="Queen" *ngIf="queens[i][j]" class="queen" />
+        </div>
+      </ng-template>
+    </div>
   </div>
 </div>
