@@ -49,5 +49,5 @@
 .queen {
   width: 80px;
   height: 80px;
-  text-shadow: 1px 1px 8px #ffffff;
+  background-color: #ffffff;
 }

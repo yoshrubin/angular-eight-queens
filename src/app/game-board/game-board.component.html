@@ -16,7 +16,7 @@
           *ngFor="let square of squares; let j = index"
           (click)="toggleQueen(i, j)"
         >
-          <img src="/src/assets/BlackQueen.svg" alt="Queen" *ngIf="queens[i][j]" class="queen"/>
+          <img src="assets/BlackQueen.svg" alt="Queen" *ngIf="queens[i][j]" class="queen"/>
         </div>
       </ng-template>
       <ng-template #odd>
@@ -26,7 +26,7 @@
           *ngFor="let square of squares; let j = index"
           (click)="toggleQueen(i, j)"
         >
-          <img src="/src/assets/BlackQueen.svg" alt="Queen" *ngIf="queens[i][j]" class="queen" />
+          <img src="assets/BlackQueen.svg" alt="Queen" *ngIf="queens[i][j]" class="queen" />
         </div>
       </ng-template>
     </div>
